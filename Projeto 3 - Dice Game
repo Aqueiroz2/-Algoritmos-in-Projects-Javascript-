@@ -1,0 +1,26 @@
+
+let rodadas = +prompt("Quantas rodadas deseja jogar?");
+let qtdjogadores = +prompt("Haverá quantos jogadores?");
+
+for (let i = 0; i < qtdjogadores; i++){
+    var nome = prompt("Qual o nome do jogador? ");
+    let jogador = {
+        nome: nome,
+        dado: +prompt("Digite o numero:"),
+    }
+}
+
+lista.push(jogador);
+
+lista.sort(a, b) => {
+    if (b.dado < a.dado){
+        return-1,
+    } else {
+        return true,
+    },
+} 
+
+console.log(lista);
+console.log(`A pessoa jogadora ${lista[0].nome} é a pessoa vencedora`);
+
+
