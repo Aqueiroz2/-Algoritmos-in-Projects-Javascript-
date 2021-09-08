@@ -1,26 +1,33 @@
 
-let rodadas = +prompt("Quantas rodadas deseja jogar?");
-let qtdjogadores = +prompt("Haverá quantos jogadores?");
+const prompt = require('prompt-sync')();
 
-for (let i = 0; i < qtdjogadores; i++){
-    var nome = prompt("Qual o nome do jogador? ");
-    let jogador = {
-        nome: nome,
-        dado: +prompt("Digite o numero:"),
-    }
+var rodadas = +prompt("Quantas rodadas deseja jogar?");
+var qtdjogadores = +prompt("Haverá quantos jogadores?");
+var lista = [];
+
+console.log(` Vc escolheu ${rodadas} rodadas`);
+console.log(` A quantidade de jogadores ${qtdjogadores} `);
+
+for (let x = 1; x <= rodadas; x++){
+
+    for (let i = 0; i < qtdjogadores; i++){
+        var nome = prompt("Qual o nome do jogador?: ");
+        let jogador = {
+            nome: nome,
+            dado: Math.floor(Math.random() * 200) +1,
+        }
+        lista.push(jogador.nome);
+        console.log(lista);
 }
-
-lista.push(jogador);
-
-lista.sort(a, b) => {
-    if (b.dado < a.dado){
-        return-1,
-    } else {
-        return true,
-    },
 } 
+var jogadores = lista.sort(function(a, b){
+    return b.dados - a.dados;
+});
 
-console.log(lista);
-console.log(`A pessoa jogadora ${lista[0].nome} é a pessoa vencedora`);
+console.log(jogadores);
+console.log(`A pessoa ${lista[0].nome} é a pessoa vencedora`);
+
+
+
 
 
