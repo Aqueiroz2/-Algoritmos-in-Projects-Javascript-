@@ -11,21 +11,28 @@ campeão. */
 
 const prompt = require('prompt-sync')();
 
-let Jogadores = [];
-let quantidade = +prompt('Quantos jogadores?');
+var rodadas = +prompt("Quantas rodadas deseja jogar?");
+var qtdjogadores = +prompt("Haverá quantos jogadores?");
+var lista = [];
 
+console.log(` Vc escolheu ${rodadas} rodadas`);
+console.log(` A quantidade é de ${qtdjogadores} jogadores `);
 
-for (let i = 0; i < quantidade; i++)
-{
-  let jogador = {};
-  jogador.name = prompt('Qual nome do jogador?: ');
-  jogador.number = Math.floor(Math.random() * 6 +1);
-  Jogadores.unshift(jogador);
+for (let x = 1; x <= rodadas; x++){
 
-}
-  console.log(Jogadores);
+    for (let i = 0; i < qtdjogadores; i++){
 
-  Jogadores.sort((a,b) => b.jogador - a.jogador);
-  console.log(Jogadores);
+        let jogador = {};
+            jogador.nome = prompt("Qual o nome do jogador?: ");
+            jogador.number = Math.floor(Math.random() * 6 +1);
+            lista.push(jogador);
+            console.log(lista);
+        };
+};
 
-  console.log();
+var jogadores = lista.sort(function(a, b){
+    return b.number - a.number;
+});
+
+console.log(jogadores);
+console.log(`A pessoa ${lista[0].nome} é a pessoa vencedora`);
