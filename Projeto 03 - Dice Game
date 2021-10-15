@@ -1,0 +1,31 @@
+/* O programa tem que:
+
+• Perguntar quantas rodadas você quer fazer; 
+• Perguntar quantos jogadores vão jogar; 
+• Criar um objeto pra cada jogador com nome e número tirado; 
+• Guarda todos os objetos em uma lista; 
+• Ordenar esses objetos, sabendo que o vencedor tirou o maior número
+no dado. 
+• Mostrar no final qual jogador ganhou mais rodadas e foi o grande
+campeão. */
+
+const prompt = require('prompt-sync')();
+
+let Jogadores = [];
+let quantidade = +prompt('Quantos jogadores?');
+
+
+for (let i = 0; i < quantidade; i++)
+{
+  let jogador = {};
+  jogador.name = prompt('Qual nome do jogador?: ');
+  jogador.number = Math.floor(Math.random() * 6 +1);
+  Jogadores.unshift(jogador);
+
+}
+  console.log(Jogadores);
+
+  Jogadores.sort((a,b) => b.jogador - a.jogador);
+  console.log(Jogadores);
+
+  console.log();
